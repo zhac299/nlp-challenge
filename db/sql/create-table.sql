@@ -1,0 +1,18 @@
+-- Active: 1705790332155@@127.0.0.1@3306
+CREATE TABLE Label (  
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    desc VARCHAR(255) 
+);
+
+CREATE TABLE Brand (  
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    name VARCHAR(11) 
+);
+
+CREATE TABLE BrandLabel (  
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    label_desc VARCHAR(255), 
+    brand_name VARCHAR(11),
+    FOREIGN KEY (brand_name) REFERENCES Brand(name),
+    FOREIGN KEY (label_desc) REFERENCES Label(desc)
+);
