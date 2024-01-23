@@ -81,6 +81,6 @@ def run_model(inputString):
 
     doc = nlp(inputString)
     predicted_label = max(doc.cats, key=doc.cats.get)
-    print(f"Input: {inputString}\nPrediction: {predicted_label}\n")
+    return(f"Input: {inputString}\nPrediction: {predicted_label}\n")
 
 run_model("I want a luxury SUV")
